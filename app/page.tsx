@@ -34,7 +34,6 @@ export default function Home() {
     setDownloaded((prev) => ({ ...prev, [which]: true }))
   }
 
-  // @ts-ignore
   return (
       <div className="font-sans min-h-screen bg-white dark:bg-black flex items-center justify-center p-8">
         <div className="flex flex-col gap-8 w-full max-w-sm text-sm">
@@ -57,12 +56,22 @@ export default function Home() {
               >
                 {isLoading ? 'Generating…' : 'Request Certificates'}
               </button>
-              <a
-                  href="/advanced"
-                  className="pt-3 text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 underline underline-offset-4 cursor-pointer"
-              >
-                Advanced options
-              </a>
+              <div className="flex flex-row items-center gap-4 pt-3">
+                <a
+                    href="/advanced"
+                    className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 underline underline-offset-4"
+                >
+                  Advanced options
+                </a>
+                <a
+                    href="https://github.com/kaehrlich/issueing/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200 underline underline-offset-4"
+                >
+                  GitHub
+                </a>
+              </div>
             </div>
           </div>
 
